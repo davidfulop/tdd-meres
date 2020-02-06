@@ -34,5 +34,15 @@ namespace StringCalculator.UnitTests
 
             Assert.Equal(expectedSum, result);
         }
+
+        [Theory]
+        [InlineData("1,2,3", 6)]
+        [InlineData("5,6,7,8,9", 35)]
+        public void Add_returns_sum_in_case_of_more_than_two_arguments(string input, int expectedSum)
+        {
+            var result = sc.Add(input);
+
+            Assert.Equal(expectedSum, result);
+        }
     }
 }
