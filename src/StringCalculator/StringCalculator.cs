@@ -8,7 +8,7 @@ namespace StringCalculator
         {
             if (string.IsNullOrEmpty(input))
                 return 0;
-            var numbers = input.Split(new[] {','}).Select(s => int.Parse(s)).ToArray();
+            var numbers = input.Split(new[] {',', '\n'}).Select(s => int.Parse(s)).ToArray();
             return numbers.Aggregate((a,b) => a+b);
         }
     }

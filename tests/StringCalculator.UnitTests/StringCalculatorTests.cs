@@ -44,5 +44,15 @@ namespace StringCalculator.UnitTests
 
             Assert.Equal(expectedSum, result);
         }
+
+        [Fact]
+        public void Add_allows_newline_as_separator()
+        {
+            var expectedSum = 6;
+
+            var result = sc.Add("1\n2,3");
+
+            Assert.Equal(expectedSum, result);
+        }
     }
 }
