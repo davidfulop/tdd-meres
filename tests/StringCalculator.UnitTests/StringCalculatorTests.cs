@@ -76,5 +76,15 @@ namespace StringCalculator.UnitTests
             Assert.True(exception.Message == 
                 $"Negative numbers aren't allowed. ({negativeNumber})");
         }
+
+        [Theory]
+        [InlineData("-3,-4", "-3, -4")]
+        [InlineData("3,-5\n-10", "-5, -10")]
+        public void Add_throws_with_all_negative_numbers_in_message(string input, string expectedNumbers)
+        {
+            var exception = Assert.Throws<ArgumentException>(() => sc.Add(input));
+            Assert.True(exception.Message ==
+                $"Negative numbers aren't allowed. ({expectedNumbers})");
+        }
     }
 }

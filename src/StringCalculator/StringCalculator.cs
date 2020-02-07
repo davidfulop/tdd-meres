@@ -22,7 +22,7 @@ namespace StringCalculator
             var negativeNumbers = numbers.Where(n => n < 0);
             if (negativeNumbers.Any())
                 throw new System.ArgumentException(
-                    $"Negative numbers aren't allowed. ({negativeNumbers.First()})");
+                    $"Negative numbers aren't allowed. ({string.Join(", ", negativeNumbers)})");
         }
 
         private static IEnumerable<int> ExtractNumbers(string input, char[] separators)
