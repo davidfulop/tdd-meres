@@ -86,5 +86,15 @@ namespace StringCalculator.UnitTests
             Assert.True(exception.Message ==
                 $"Negative numbers aren't allowed. ({expectedNumbers})");
         }
+
+        [Theory]
+        [InlineData(0)]
+        [InlineData(99)]
+        public void GetCalledCount_returns_how_many_times_Add_was_called(int callCount)
+        {
+            for (int i = 0; i < callCount; i++)
+                sc.Add(string.Empty);
+            Assert.True(sc.GetCalledCount() == callCount);
+        }
     }
 }

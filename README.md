@@ -10,3 +10,4 @@ TDD mérés szakdolgozathoz.
     - Tehát: //[elválasztó]\n[számok], például: //;\n1;2;3 
 5. Ha a bemenet negatív számot tartalmaz, a metódus dobjon egy kivételt az erre vonatkozó üzenettel és benne az első negatív számmal. (Használd az ArgumentException osztályt.)
 6. Ha több negatív szám is szerepel a bemenetben, a hibaüzenet tartalmazza mindet!
+7. Adj egy új metódust az osztályhoz: public int GetCalledCount(), melynek visszatérési értéke a szám, hogy eddig hányszor hívták meg az Add metódust.

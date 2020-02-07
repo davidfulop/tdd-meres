@@ -5,8 +5,12 @@ namespace StringCalculator
 {
     public class StringCalculator
     {
+        private int callCount;
+
         public int Add(string input)
         {
+            callCount++;
+
             if (string.IsNullOrEmpty(input))
                 return 0;
 
@@ -15,6 +19,11 @@ namespace StringCalculator
             var numbers = ExtractNumbers(cleanInput, separators);
             ThrowForNegativeNumber(numbers);
             return numbers.Aggregate((a, b) => a + b);
+        }
+
+        public int GetCalledCount()
+        {
+            return callCount++;
         }
 
         private static void ThrowForNegativeNumber(IEnumerable<int> numbers)
