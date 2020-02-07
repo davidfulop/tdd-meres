@@ -65,5 +65,16 @@ namespace StringCalculator.UnitTests
 
             Assert.Equal(expectedSum, result);
         }
+
+        [Fact]
+        public void Add_throws_when_there_is_a_negative_number_in_input()
+        {
+            var negativeNumber = -3;
+            var input = $"1,2,{negativeNumber},4";
+
+            var exception = Assert.Throws<ArgumentException>(() => sc.Add(input));
+            Assert.True(exception.Message == 
+                $"Negative numbers aren't allowed. ({negativeNumber})");
+        }
     }
 }

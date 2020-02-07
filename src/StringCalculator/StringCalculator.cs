@@ -11,9 +11,18 @@ namespace StringCalculator
                 return 0;
 
             var separators = GenerateSeparators(input);
-            input = RemoveCustomSeparatorFromInput(input);
-            var numbers = ExtractNumbers(input, separators);
+            var cleanInput = RemoveCustomSeparatorFromInput(input);
+            var numbers = ExtractNumbers(cleanInput, separators);
+            ThrowForNegativeNumber(numbers);
             return numbers.Aggregate((a, b) => a + b);
+        }
+
+        private static void ThrowForNegativeNumber(IEnumerable<int> numbers)
+        {
+            var negativeNumbers = numbers.Where(n => n < 0);
+            if (negativeNumbers.Any())
+                throw new System.ArgumentException(
+                    $"Negative numbers aren't allowed. ({negativeNumbers.First()})");
         }
 
         private static IEnumerable<int> ExtractNumbers(string input, char[] separators)

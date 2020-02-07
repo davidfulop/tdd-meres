@@ -8,3 +8,4 @@ TDD mérés szakdolgozathoz.
 3. Módosítsd a metódust úgy, hogy vessző helyett újsor (\n) karaktert is elfogadjon elválasztóként a számok között! (Vagy újsor, vagy vessző lehet két szám között. Egy bemenetben mindkettő előfordulhat.) 
 4. Tedd lehetővé saját elválasztókarakter megadását. Ha a string két / karakterrel indul, az azokat követő karakter is elfogadott elválasztó karakter legyen a bemenetben. A bemenet elején megadott elválasztókaraktert egy újsor karakter kövesse! 
     - Tehát: //[elválasztó]\n[számok], például: //;\n1;2;3 
+5. Ha a bemenet negatív számot tartalmaz, a metódus dobjon egy kivételt az erre vonatkozó üzenettel és benne az első negatív számmal. (Használd az ArgumentException osztályt.)
