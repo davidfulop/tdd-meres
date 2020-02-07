@@ -18,12 +18,18 @@ namespace StringCalculator
             var cleanInput = RemoveCustomSeparatorFromInput(input);
             var numbers = ExtractNumbers(cleanInput, separators);
             ThrowForNegativeNumber(numbers);
-            return numbers.Aggregate((a, b) => a + b);
+            var filteredNumbers = FilterOutTooBigNumbers(numbers);
+            return filteredNumbers.Aggregate((a, b) => a + b);
         }
 
         public int GetCalledCount()
         {
             return callCount++;
+        }
+
+        private static IEnumerable<int> FilterOutTooBigNumbers(IEnumerable<int> numbers)
+        {
+            return numbers.Where(n => n <= 1000);
         }
 
         private static void ThrowForNegativeNumber(IEnumerable<int> numbers)

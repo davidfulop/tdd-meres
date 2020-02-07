@@ -96,5 +96,14 @@ namespace StringCalculator.UnitTests
                 sc.Add(string.Empty);
             Assert.True(sc.GetCalledCount() == callCount);
         }
+
+        [Fact]
+        public void Add_ignores_numbers_greater_than_1000()
+        {
+            var expectedSum = 3;
+            var result = sc.Add("1,1001,20000,2");
+
+            Assert.Equal(expectedSum, result);
+        }
     }
 }

@@ -11,3 +11,4 @@ TDD mérés szakdolgozathoz.
 5. Ha a bemenet negatív számot tartalmaz, a metódus dobjon egy kivételt az erre vonatkozó üzenettel és benne az első negatív számmal. (Használd az ArgumentException osztályt.)
 6. Ha több negatív szám is szerepel a bemenetben, a hibaüzenet tartalmazza mindet!
 7. Adj egy új metódust az osztályhoz: public int GetCalledCount(), melynek visszatérési értéke a szám, hogy eddig hányszor hívták meg az Add metódust.
+8. Módosítsd úgy az Add metódust, hogy az 1000-nél nagyobb számokat hagyja figyelmen kívül!
