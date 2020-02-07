@@ -6,3 +6,5 @@ TDD mérés szakdolgozathoz.
     - A metódus 0, 1, vagy 2 vesszővel elválasztott számot keres a stringben, és összegüket adja vissza, üres string esetén 0-t.
 2. Módosítsd a metódust úgy, hogy bármennyi számot fel tudjon dolgozni a stringben!
 3. Módosítsd a metódust úgy, hogy vessző helyett újsor (\n) karaktert is elfogadjon elválasztóként a számok között! (Vagy újsor, vagy vessző lehet két szám között. Egy bemenetben mindkettő előfordulhat.) 
+4. Tedd lehetővé saját elválasztókarakter megadását. Ha a string két / karakterrel indul, az azokat követő karakter is elfogadott elválasztó karakter legyen a bemenetben. A bemenet elején megadott elválasztókaraktert egy újsor karakter kövesse! 
+    - Tehát: //[elválasztó]\n[számok], például: //;\n1;2;3 
